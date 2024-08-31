@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
+const { registerUser, loginUser } = require('../controllers/authController');
 
 router.get("/", (req, res) => {
     res.send("Its again working");
 });
 
+//User Register route
+router.post("/register",registerUser); //registerUser function called from authController.js
 
+//User Login route
+router.post("/login",loginUser); //loginUser function called from authController.js
+
+//Exported this routes to user in index.js
 module.exports = router;
