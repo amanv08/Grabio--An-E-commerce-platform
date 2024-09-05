@@ -34,6 +34,5 @@ app.use("/products", productsRouter);
 app.use("/owners", ownersRouter);
 
 
-
 app.listen(3000);
 console.log("Your server is running at http://localhost:3000");
