@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
     <% if(success.length>0){ %>
-        <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-blue-500">
+        <div class="absolute top-5 left-1/2 -translate-x-1/2 translate-y-1 p-3 rounded-md bg-blue-500">
             <span class="inline-block mt-1 mb-1 text-white">
                 <%= success %>
             </span>
@@ -48,6 +48,7 @@
                             </div>
                             <input class="px-5 py-2 rounded mt-3 bg-blue-500 text-white" type="submit"
                                 value="Create New Product">
+                            <a href="/owners/logout" class="text-lg text-white bg-red-500 px-5 py-2 ml-96 rounded">Logout</a>
                         </form>
                     </main>
                 </div>

@@ -4,7 +4,7 @@ const isLoggedIn = require('../middlewares/isLoggedIn');
 const productModel = require('../models/product_model');
 const userModel = require('../models/user_model');
 
-//Render login and register page
+//Render login and register page for user
 router.get("/", (req, res) => {
     let error = req.flash("error");
     let success = req.flash("success");
