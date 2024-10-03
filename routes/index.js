@@ -12,13 +12,13 @@ router.get("/", (req, res) => {
 });
 
 //Render Shop page after checking user is logged in or not
-router.get("/shop", isLoggedIn, async (req, res) => {
+router.get("/shop", isLoggedIn(userModel), async (req, res) => {
     let products = await productModel.find();
     let success = req.flash("success");
     res.render("shop", { products, success });
 });
 
-router.get("/addtocart/:productid", isLoggedIn, async (req, res) => {
+router.get("/addtocart/:productid", isLoggedIn(userModel), async (req, res) => {
     let user = await userModel.findOne({email : req.user.email});
     user.cart.push(req.params.productid);
     await user.save();
@@ -26,7 +26,7 @@ router.get("/addtocart/:productid", isLoggedIn, async (req, res) => {
     res.redirect("/shop");
 });
 
-router.get("/cart", isLoggedIn, async (req, res) => {
+router.get("/cart", isLoggedIn(userModel), async (req, res) => {
     let user = await userModel.findOne({email : req.user.email}).populate("cart");
     
     // Calculate the total bill
