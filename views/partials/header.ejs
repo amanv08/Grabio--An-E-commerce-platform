@@ -5,20 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-['helvetica_now_display'] bg-[#FFAD60]">
-    <nav class="w-full fixed flex justify-between top-0 left-0 px-5 py-3 bg-[#96CEB4]">
-        <h3 class="text-3xl text-black-600 font-semibold">Grabio</h3>
-        <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true %>
-        <% if(loggedin) { %>
-        <div class="flex gap-5">
-            <a href="/shop">Shop</a>
-            <a href="">My Account</a>
-            <a href="/cart">Cart</a>
-            <a class="text-red-600" href="/users/logout">Logout</a>
-        <% } %>
+<body class="font-['roboto'] bg-gray-100">
+    <nav class="w-full fixed top-0 left-0 bg-white shadow-md z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <h3 class="text-3xl font-bold text-gray-800">Grabio</h3>
+                <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true %>
+                <% if(loggedin) { %>
+                <div class="hidden md:flex space-x-8 ml-auto">
+                    <a href="/shop" class="text-lg font-medium text-gray-800 hover:text-indigo-600">Shop</a>
+                    <a href="/account" class="text-lg font-medium text-gray-800 hover:text-indigo-600">My Account</a>
+                    <a href="/cart" class="text-lg font-medium text-gray-800 hover:text-indigo-600">Cart</a>
+                    <a href="/users/logout" class="text-lg font-medium text-red-600 hover:text-red-700">Logout</a>
+                </div>
+                <% } %>
+            </div>
         </div>
     </nav>
